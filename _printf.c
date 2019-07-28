@@ -11,7 +11,7 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 
-	p_t pall[] = {
+	var_t pall[] = {
 		{"c", c_func},
 		{"i", i_func},
 		{"f", f_func},

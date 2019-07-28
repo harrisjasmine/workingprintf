@@ -9,5 +9,9 @@
 
 void c_func(va_list args)
 {
-        printf("%c", va_arg(args, int));
+        char *c = va_arg(args, int);
+		while (*c++)
+		{
+			_putchar(c);
+		}
 }
