@@ -7,7 +7,6 @@ int _putchar(char c);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 int _printf(const char *format, ...);
-void print_number(int n, int *count);
 
 /**
  * struct vartype - struct vartype
@@ -26,6 +25,6 @@ int c_func(va_list args);
 int s_func(va_list args);
 int perc_func(va_list args);
 int i_func(va_list args);
-int d_func(va_list args);
+int f_func(va_list args);
 
 #endif
