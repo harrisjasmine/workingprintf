@@ -7,11 +7,11 @@
  * @args: character passed into function
  */
 
-void c_func(va_list args)
+int c_func(va_list args)
 {
-        char *c = va_arg(args, int);
-		while (*c++)
-		{
-			_putchar(c);
-		}
+	char c;
+
+	c = va_arg(args, int);
+	_putchar(c);
+	return (1);
 }

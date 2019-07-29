@@ -3,9 +3,10 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+int _putchar(char c);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
-void _printf(const char *format, ...);
+int _printf(const char *format, ...);
 
 /**
  * struct vartype - struct vartype
@@ -17,12 +18,13 @@ void _printf(const char *format, ...);
 typedef struct vartype
 {
 	char *vartype;
-	void (*f)(va_list);
+	int (*f)(va_list);
 } var_t;
 
-void c_char(va_list args);
-void s_string(va_list args);
-void i_integer(va_list args);
-void f_float(va_list args);
+int c_func(va_list args);
+int s_func(va_list args);
+int perc_func(va_list args);
+int i_func(va_list args);
+int f_func(va_list args);
 
 #endif

@@ -1,49 +1,52 @@
-#include "variadic_functions.h"
+#include "holberton.h"
 #include <stdarg.h>
 #include <stdio.h>
 
 /**
- * print_all - function that prints everything
- * @format: list of types of arguments passed to function
+ * _printf - function that produces output according to a format
+ * @format: type of argument passed to function
  */
 
-void print_all(const char * const format, ...)
+int _printf(const char *format, ...)
 {
 	va_list args;
 
-	var_t pall[] = {
+	var_t type[] = {
 		{"c", c_func},
-		{"i", i_func},
-		{"f", f_func},
 		{"s", s_func},
+		{"%", perc_func},
+		{NULL, NULL},
 	};
-	int i = 0;
-	int j = 0;
-	char *sep;
-
-	sep = "";
+	int i, j, k, count;
 
 	va_start(args, format);
-
-	while (format != '\0' && format[j] != 0)
+	i = 0, count = 0, k = 0;
+	while (format && format[i])
 	{
-		i = 0;
-		while (i < 4)
+		if (format[i] != '%')
 		{
-			if (*pall[i].type == format[j])
+			_putchar(format[i]);
+			k++;
+		}
+		else
+		{
+			j = 0;
+			while (type[j].vartype)
 			{
-				printf("%s", sep);
-				(pall[i].f)(args);
-				sep = ", ";
+				if (format[i + 1] == *type[j].vartype)
+				{
+					count += (type[j].f)(args);
+					printf("%i", count);
+				}
+				j++;
 			}
-
 			i++;
 		}
-
-		j++;
+		i++;
 	}
-
-	printf("\n");
-
+	k = k - 1;
+	k += count;
 	va_end(args);
+	printf("%i\n", k);
+	return (k);
 }

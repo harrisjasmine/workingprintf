@@ -7,16 +7,21 @@
  * @args: string passed into function
  */
 
-void s_func(va_list args)
+int s_func(va_list args)
 {
-        char *s = va_arg(args, char *);
+	int i;
+        char *s;
 
+	s = va_arg(args, char *);
         if (s == NULL)
         {
-                return;
+                return (0);
         }
-        for (*s++)
-		{
-			_putchar(s);
-		}
+	i = 0;
+        while (s[i])
+	{
+		_putchar(s[i]);
+		i++;
+	}
+	return (i);
 }
