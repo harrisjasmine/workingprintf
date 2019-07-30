@@ -5,8 +5,6 @@
 /**
  * c_func - function that prints characters
  * @args: character passed into function
- *
- * Return: counter
  */
 
 int c_func(va_list args)

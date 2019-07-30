@@ -5,22 +5,20 @@
 /**
  * s_func - function to print strings
  * @args: string passed into function
- *
- * Return: counter
  */
 
 int s_func(va_list args)
 {
 	int i;
-	char *s;
+        char *s;
 
 	s = va_arg(args, char *);
-	if (s == NULL)
-	{
-		return (0);
-	}
+        if (s == NULL)
+        {
+                return (0);
+        }
 	i = 0;
-	while (s[i])
+        while (s[i])
 	{
 		_putchar(s[i]);
 		i++;
