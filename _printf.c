@@ -16,8 +16,8 @@ int _printf(const char *format, ...)
 	var_t type[] = {
 		{"c", c_func},
 		{"s", s_func},
-		{"%", perc_func},
 		{"i", i_func},
+		{"%", perc_func},
 		{"d", d_func},
 		{NULL, NULL},
 	};
@@ -39,8 +39,14 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == *type[j].vartype)
 				{
 					count += (type[j].f)(args);
+					break;
 				}
 				j++;
+			}
+
+			if (type[j].vartype == NULL) {
+				count += 1;
+				_putchar('%');
 			}
 			i++;
 		}
