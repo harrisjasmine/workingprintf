@@ -5,14 +5,11 @@
 /**
  * perc_func - function that prints %
  * @args: character passed into function
+ * Return: number of characters
  */
 
 int perc_func(va_list args)
 {
-	char c;
-
-	c = va_arg(args, int);
-	(void) c;
 	_putchar('%');
-	return (1);
+	return (2);
 }
