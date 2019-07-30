@@ -24,6 +24,7 @@ typedef struct vartype
 
 int c_func(va_list args);
 int s_func(va_list args);
+int b_func(va_list args);
 int perc_func(va_list args);
 int i_func(va_list args);
 int d_func(va_list args);
