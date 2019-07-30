@@ -1,0 +1,24 @@
+#include "holberton.h"
+
+/**
+ * rev_func - function that prints a string, in reverse
+ * @args: pointer to string
+ *
+ */
+
+void print_rev(char *s)
+{
+    int a;
+
+    for (a = 0; s[a] != '\0'; a++)
+    {
+        ;
+    }
+
+    for (; --a >= 0;)
+    {
+        _putchar(s[a]);
+    }
+
+    _putchar('\n');
+}

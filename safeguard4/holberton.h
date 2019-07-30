@@ -27,8 +27,5 @@ int s_func(va_list args);
 int perc_func(va_list args);
 int i_func(va_list args);
 int d_func(va_list args);
-int b_func(va_list args);
-int rev_func(va_list args);
-int rot_func(va_list args);
 
 #endif

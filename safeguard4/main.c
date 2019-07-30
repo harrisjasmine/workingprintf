@@ -12,8 +12,6 @@ int main(void)
 {
 		int len;
 		int len2;
-		char s[] = "ROT13 (\"rotate by 13 places\", sometimes hyphenated ROT-13) is a simple letter substitution cipher.\n";
-		char a[] = "Holberton";
 
 		len = _printf("Let's try to printf a simple sentence.");
 		len2 = printf("Let's try to printf a simple sentence.");
@@ -37,11 +35,5 @@ int main(void)
 		printf("%%s \n", "yolo");
 		_printf("Len:[%d]\n", len);
 		printf("Len:[%d]\n", len2);
-		len = _printf("binarymine: %b\n", 20);
-                _printf("my len binary: %d\n", len);
-		len = _printf("%R", s);
-		_printf("my len rot13: %d\n", len);
-		len = _printf("%r\n", a);
-                _printf("my len reverse: %d\n", len);
 	return (0);
 }

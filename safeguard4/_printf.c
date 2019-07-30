@@ -19,9 +19,6 @@ int _printf(const char *format, ...)
 		{"i", i_func},
 		{"%", perc_func},
 		{"d", d_func},
-		{"b", b_func},
-		{"r", rev_func},
-		{"R", rot_func},
 		{NULL, NULL},
 	};
 
@@ -30,7 +27,10 @@ int _printf(const char *format, ...)
 	while (format && format[i])
 	{
 		if (format[i] != '%')
-			_putchar(format[i]), k++;
+		{
+			_putchar(format[i]);
+			k++;
+		}
 		else
 		{
 			j = 0;
@@ -38,13 +38,17 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == *type[j].vartype)
 				{
-					count += (type[j].f)(args), i++;
+					count += (type[j].f)(args);
+					i++;
 					break;
 				}
 				j++;
 			}
 			if (type[j].vartype == NULL)
-				count += 1, _putchar('%');
+			{
+				count += 1;
+				_putchar('%');
+			}
 		}
 		i++;
 	}
